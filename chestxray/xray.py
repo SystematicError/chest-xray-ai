@@ -1,4 +1,4 @@
-print("Importing libraries...")
+print("[xray] Importing libraries...")
 from typing import Optional
 
 from skimage.io import imread
@@ -20,7 +20,7 @@ class XrayScanner:
             weights: Pre trained weights to use. Defaults to "all".
         """
 
-        print("Loading model...")
+        print("[xray] Loading model...")
         self.model = models.DenseNet(weights=weights)
 
     def scan_xray(self, image_path: str) -> None:
@@ -30,11 +30,11 @@ class XrayScanner:
         Args:
             image_path: Path to the image. Ideally should be absolute.
         """
-        print("Opening image...")
+        print("[xray] Opening image...")
         image = imread(image_path)
         image = datasets.normalize(image, 255)
 
-        print("Running image correction...")
+        print("[xray] Running image correction...")
         if len(image.shape) < 2:
             raise exceptions.InvalidDimensions("Dimensions is lower than 2.")
             return
@@ -47,7 +47,7 @@ class XrayScanner:
             [datasets.XRayCenterCrop(), datasets.XRayResizer(224)]
         )(image)
 
-        print("Predicting abnormalities...")
+        print("[xray] Predicting abnormalities...")
         with no_grad():
             image = from_numpy(image).unsqueeze(0)
             prediction = self.model(image).cpu()

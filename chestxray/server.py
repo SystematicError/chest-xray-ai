@@ -28,5 +28,5 @@ def start_server(host: str = "0.0.0.0", port: int = 13520):
         host: Host address.
         port: Port number.
     """
-    print(f"Running on http://{host}:{port}")
+    print(f"[server] Running on http://{host}:{port}")
     app.run(host=host, port=port)
