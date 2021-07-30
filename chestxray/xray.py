@@ -23,7 +23,7 @@ class XrayScanner:
         print("[xray] Loading model")
         self.model = models.DenseNet(weights=weights)
 
-    def scan_xray(self, image: bytes) -> None:
+    def scan_xray(self, image: bytes) -> dict:
         """
         Scans an image using the model which was loaded.
 

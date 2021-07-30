@@ -14,12 +14,12 @@ xray = XrayScanner()
 
 
 @app.route("/server-info")
-def server_info():
+def server_info() -> str:
     return platform()
 
 
 @app.route("/scan-xray", methods=["POST"])
-def scan_xray():
+def scan_xray() -> str:
     try:
         response = str(xray.scan_xray(request.files["image"].read()))
     except Exception as error:
@@ -29,7 +29,7 @@ def scan_xray():
         return response
 
 
-def start_server(host: str = "0.0.0.0", port: int = 13520):
+def start_server(host: str = "0.0.0.0", port: int = 13520) -> None:
     """
     Server for webclient, can recieve and scan images.
 
