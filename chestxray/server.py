@@ -25,7 +25,7 @@ def scan_xray():
     except Exception as error:
         response = {"error": str(error)}
     finally:
-        print("[server] Sending results")
+        print("[server] Sending results\n")
         return response
 
 
@@ -37,5 +37,5 @@ def start_server(host: str = "0.0.0.0", port: int = 13520):
         host: Host address.
         port: Port number.
     """
-    print(f"[server] Running on http://{host}:{port}")
+    print(f"[server] Running on http://{host}:{port}\n")
     app.run(host=host, port=port)
