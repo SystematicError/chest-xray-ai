@@ -20,9 +20,13 @@ def server_info():
 
 @app.route("/scan-xray", methods=["POST"])
 def scan_xray():
-    print("[server] Recieved scan request")
-    print("[server] Sending results")
-    return str(xray.scan_xray(request.files["image"].read()))
+    try:
+        response = str(xray.scan_xray(request.files["image"].read()))
+    except Exception as error:
+        response = {"error": str(error)}
+    finally:
+        print("[server] Sending results")
+        return response
 
 
 def start_server(host: str = "0.0.0.0", port: int = 13520):
