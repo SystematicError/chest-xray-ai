@@ -1,9 +1,7 @@
 print("[xray] Importing libraries...")
-from io import BytesIO
 from typing import Optional
 
-from numpy import array
-from PIL import Image
+from skimage.io import imread
 from torch import from_numpy, no_grad
 from torchvision.transforms import Compose
 from torchxrayvision import datasets, models
@@ -33,7 +31,7 @@ class XrayScanner:
             image: Path to the image. Ideally should be absolute.
         """
         print("[xray] Opening image")
-        image = array(Image.open(BytesIO(image)))
+        image = imread(image, plugin="imageio")
         image = datasets.normalize(image, 255)
 
         print("[xray] Running image correction")
