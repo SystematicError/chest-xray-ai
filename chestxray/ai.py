@@ -3,10 +3,10 @@ from . import exceptions
 
 from typing import Optional
 
-import torch
-import torchxrayvision as xray
 from skimage.io import imread
+from torch import from_numpy, no_grad
 from torchvision.transforms import Compose
+from torchxrayvision import datasets, models
 
 
 class XrayScanner:
@@ -21,7 +21,7 @@ class XrayScanner:
         """
 
         print("Loading model...")
-        self.model = xray.models.DenseNet(weights=weights)
+        self.model = models.DenseNet(weights=weights)
 
     def scan_xray(self, image_path: str) -> None:
         """
@@ -32,7 +32,7 @@ class XrayScanner:
         """
         print("Opening image...")
         image = imread(image_path)
-        image = xray.datasets.normalize(image, 255)
+        image = datasets.normalize(image, 255)
 
         print("Running image correction...")
         if len(image.shape) < 2:
@@ -44,15 +44,15 @@ class XrayScanner:
 
         image = image[None, :, :]  # Add color channel
         image = Compose(
-            [xray.datasets.XRayCenterCrop(), xray.datasets.XRayResizer(224)]
+            [datasets.XRayCenterCrop(), datasets.XRayResizer(224)]
         )(image)
 
         print("Predicting abnormalities...")
-        with torch.no_grad():
-            image = torch.from_numpy(image).unsqueeze(0)
+        with no_grad():
+            image = from_numpy(image).unsqueeze(0)
             prediction = self.model(image).cpu()
             prediction = dict(zip(
-                xray.datasets.default_pathologies,
+                datasets.default_pathologies,
                 prediction[0].detach().numpy())
             )
             return prediction
