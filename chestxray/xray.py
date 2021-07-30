@@ -1,12 +1,12 @@
 print("Importing libraries...")
-from . import exceptions
-
 from typing import Optional
 
 from skimage.io import imread
 from torch import from_numpy, no_grad
 from torchvision.transforms import Compose
 from torchxrayvision import datasets, models
+
+from . import exceptions
 
 
 class XrayScanner:
