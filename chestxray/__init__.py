@@ -1,2 +1,2 @@
-from .ai import XrayScanner
+from .xray import XrayScanner
 from .exceptions import InvalidDimensions
