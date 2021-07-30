@@ -4,10 +4,13 @@ from sys import modules
 
 from flask import Flask, request
 
+from .xray import XrayScanner
+
 modules["flask.cli"].show_server_banner = lambda *args: None
 getLogger("werkzeug").setLevel(ERROR)
 
 app = Flask("")
+xray = XrayScanner()
 
 
 @app.route("/server-info")
@@ -15,9 +18,11 @@ def server_info():
     return platform()
 
 
-@app.route("/", methods=["POST"])
+@app.route("/scan-xray", methods=["POST"])
 def scan_xray():
-    return
+    print("[server] Recieved scan request")
+    prediction = xray.scan_xray(request.files["image"].read())
+    return prediction
 
 
 def start_server(host: str = "0.0.0.0", port: int = 13520):

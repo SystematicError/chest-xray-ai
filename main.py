@@ -1,4 +1,3 @@
-from chestxray import XrayScanner
+from chestxray import start_server
 
-scanner = XrayScanner()
-print(scanner.scan_xray("chest.jpeg"))
+start_server()
