@@ -1,4 +1,4 @@
-"""Quick and simple demo for testing the code"""
+"""Quick and simple demo for testing the code."""
 from .xray import XrayScanner
 
 scanner = XrayScanner()

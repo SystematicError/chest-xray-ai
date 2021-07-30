@@ -29,6 +29,9 @@ class XrayScanner:
 
         Args:
             image: Path to the image. Ideally should be absolute.
+
+        Returns:
+            dict: Dictionary containing predictions.
         """
         print("[xray] Opening image")
         image = imread(image, plugin="imageio")

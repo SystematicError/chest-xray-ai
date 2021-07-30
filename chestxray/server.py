@@ -15,11 +15,13 @@ xray = XrayScanner()
 
 @app.route("/server-info")
 def server_info() -> str:
+    """Returns host information for the client to verify."""
     return platform()
 
 
 @app.route("/scan-xray", methods=["POST"])
 def scan_xray() -> str:
+    """Scans the provided image and returns the AI's predictions."""
     try:
         response = str(xray.scan_xray(request.files["image"].read()))
     except Exception as error:
