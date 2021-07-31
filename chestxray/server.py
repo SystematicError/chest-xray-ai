@@ -14,6 +14,11 @@ app = Flask("")
 xray = XrayScanner()
 
 
+@app.route("/")
+def home_page() -> str:
+    """Home page of website, lets users quickly access different features"""
+    return "Still under development :)"
+
 @app.route("/server-info")
 def server_info() -> str:
     """Returns host information for the client to verify."""
