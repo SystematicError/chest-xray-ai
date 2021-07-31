@@ -2,7 +2,7 @@ from logging import ERROR, getLogger
 from platform import platform
 from sys import modules
 
-from flask import Flask, request
+from flask import Flask, render_template, request
 
 from .tunnel import start_tunnel
 from .xray import XrayScanner
@@ -17,7 +17,13 @@ xray = XrayScanner()
 @app.route("/")
 def home_page() -> str:
     """Home page of website, lets users quickly access different features"""
-    return "Still under development :)"
+    return render_template("home.html")
+
+
+@app.route("/start-scan")
+def start_scan() -> str:
+    """Home page of website, lets users quickly access different features"""
+    return render_template("scan.html")
 
 
 @app.route("/api/server-info")
