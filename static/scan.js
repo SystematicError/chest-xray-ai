@@ -10,7 +10,7 @@ function store_image () {
         file_reader.readAsDataURL(file)
         file_reader.onload = () => {
             localStorage["xray"] = file_reader.result
-            window.location = `/result?server_id=${encodeURIComponent(localStorage["server_id"])}`
+            window.location = "/result"
         }
     }
 }
