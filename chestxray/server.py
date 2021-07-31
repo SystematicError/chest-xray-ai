@@ -47,6 +47,6 @@ def start_server(host: str = "0.0.0.0", port: int = 13520) -> None:
         port: Port number.
     """
     server_id = start_tunnel(host, port)
-    print(f"[server] Running locally http://{host}:{port}\n")
-    print(f"[server] Server ID is {server_id}")
+    print(f"[server] Running locally http://{host}:{port}")
+    print(f"[server] Server ID is {server_id}\n")
     app.run(host, port)
