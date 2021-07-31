@@ -1,4 +1,4 @@
-print("[xray] Importing libraries...")
+print("[xray] Importing libraries")
 from typing import Optional
 
 from skimage.io import imread
