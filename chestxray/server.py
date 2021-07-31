@@ -1,5 +1,5 @@
 from logging import ERROR, getLogger
-from platform import platform
+# from platform import platform
 from sys import modules
 
 from flask import Flask, render_template, request
@@ -32,10 +32,10 @@ def result() -> str:
     return render_template("result.html")
 
 
-@app.route("/api/server-info")
-def server_info() -> str:
-    """Returns host information for the client to verify."""
-    return platform()
+# @app.route("/api/server-info")
+# def server_info() -> str:
+#     """Returns host information for the client to verify."""
+#     return platform()
 
 
 @app.route("/api/scan-xray", methods=["POST"])
