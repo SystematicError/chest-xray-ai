@@ -1,7 +1,7 @@
 from pyngrok import ngrok
 
 
-def start_tunnel(host: str = "0.0.0.0", port: int = 13520) -> str:
+def start_tunnel(host: str = "0.0.0.0", port: int = 13520) -> None:
     """
     Creates a ngrok tunnel and generates a Session ID to connect to.
 
@@ -15,10 +15,6 @@ def start_tunnel(host: str = "0.0.0.0", port: int = 13520) -> str:
     """
     try:
         url = ngrok.connect(port, "http").public_url
-        print(f"[tunnel] Created tunnel at {url}")
-        server_id = url.replace("http://", "").replace(".ngrok.io", "")
+        print(f"[tunnel] Created tunnel at {url}\n")
     except Exception:
-        print("[tunnel] Failed to create tunnel")
-        server_id = "unavailable"
-    finally:
-        return server_id
+        print("[tunnel] Failed to create tunnel\n")
