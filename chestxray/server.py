@@ -4,6 +4,7 @@ from sys import modules
 
 from flask import Flask, request
 
+from .tunnel import start_tunnel
 from .xray import XrayScanner
 
 modules["flask.cli"].show_server_banner = lambda *args: None
@@ -39,5 +40,7 @@ def start_server(host: str = "0.0.0.0", port: int = 13520) -> None:
         host: Host address.
         port: Port number.
     """
-    print(f"[server] Running on http://{host}:{port}\n")
-    app.run(host=host, port=port)
+    server_id = start_tunnel(host, port)
+    print(f"[server] Running locally http://{host}:{port}\n")
+    print(f"[server] Server ID is {server_id}")
+    app.run(host, port)
