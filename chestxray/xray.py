@@ -46,16 +46,13 @@ class XrayScanner:
             image = image[:, :, 0]
 
         image = image[None, :, :]  # Add color channel
-        image = Compose(
-            [datasets.XRayCenterCrop(), datasets.XRayResizer(224)]
-        )(image)
+        image = Compose([datasets.XRayCenterCrop(), datasets.XRayResizer(224)])(image)
 
         print("[xray] Predicting abnormalities")
         with no_grad():
             image = from_numpy(image).unsqueeze(0)
             prediction = self.model(image).cpu()
-            prediction = dict(zip(
-                datasets.default_pathologies,
-                prediction[0].detach().numpy())
+            prediction = dict(
+                zip(datasets.default_pathologies, prediction[0].detach().numpy())
             )
             return prediction
