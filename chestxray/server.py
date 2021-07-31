@@ -1,3 +1,5 @@
+from base64 import b64decode
+from json import loads
 from logging import ERROR, getLogger
 # from platform import platform
 from sys import modules
@@ -42,7 +44,8 @@ def result() -> str:
 def scan_xray() -> str:
     """Scans the provided image and returns the AI's predictions."""
     try:
-        response = str(xray.scan_xray(request.files["image"].read()))
+        image = b64decode(loads(request.data)["image"].split(",", 1)[1])
+        response = str(xray.scan_xray(image))
     except Exception as error:
         response = {"error": str(error)}
     finally:
