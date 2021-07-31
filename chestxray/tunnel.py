@@ -15,6 +15,5 @@ def start_tunnel(host: str = "0.0.0.0", port: int = 13520) -> str:
     """
     url = ngrok.connect(port, "http").public_url
     print(f"[tunnel] Created tunnel at {url}")
-
     server_id = url.replace("http://", "").replace(".ngrok.io", "")
     return server_id

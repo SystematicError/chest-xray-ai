@@ -26,6 +26,12 @@ def start_scan() -> str:
     return render_template("scan.html")
 
 
+@app.route("/result")
+def result() -> str:
+    """Shows the results of the scan"""
+    return render_template("result.html")
+
+
 @app.route("/api/server-info")
 def server_info() -> str:
     """Returns host information for the client to verify."""

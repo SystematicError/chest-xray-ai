@@ -4,10 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <script src="/static/scan.js"></script>
+
         <title>Start a scan</title>
     </head>
 
     <body>
-        <p>This website is still under development :)</p>
+        <input type="file" accept="image/*" id="image-upload" name="image">
+        <button onclick="start_scan()">Submit</button>
     </body>
 </html>
