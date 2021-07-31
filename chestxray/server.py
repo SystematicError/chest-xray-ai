@@ -20,13 +20,13 @@ def home_page() -> str:
     return "Still under development :)"
 
 
-@app.route("/server-info")
+@app.route("/api/server-info")
 def server_info() -> str:
     """Returns host information for the client to verify."""
     return platform()
 
 
-@app.route("/scan-xray", methods=["POST"])
+@app.route("/api/scan-xray", methods=["POST"])
 def scan_xray() -> str:
     """Scans the provided image and returns the AI's predictions."""
     try:
