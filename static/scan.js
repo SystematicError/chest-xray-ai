@@ -1,3 +1,7 @@
+document.getElementById("image-upload").onchange = () => {
+    document.getElementById("image-preview").src = URL.createObjectURL(document.getElementById("image-upload").files[0])
+}
+
 function store_image () {
     file = document.getElementById("image-upload").files[0]
 
