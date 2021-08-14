@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/*****************************************************************************************
+    Majority of the styling is done by Bootstrap 5 but some parts are custom styled
+
+    Note: The !important clause is sometimes used in order to override bootstrap's css
+******************************************************************************************/
+
+.nav-link, .navbar-brand, h1, h3, p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #000000 !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.nav-item {
+    padding-left: 10px;
+}
+
+.nav-link:not(:hover) {
+    transition: 0.5s;
+}
+
+.nav-link:hover {
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.learn-more {
+    background-color: #ffc107;
+    border-radius: 20px;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    color: #ffffff;
+}
+
+.landing-image {
+    width: 600px;
+}
+
+.container:not(:first-child) {
+    height: 100vh;
+}
+
+.container:nth-child(2) {
+    height: 90vh;
+}
+
+hr {
+    color: #ffc107 !important;
+    height: 2px !important;
+    opacity: 100 !important;
+}

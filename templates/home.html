@@ -1,13 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Chest Xray Scan</title>
+        <link rel="stylesheet" href="/static/home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <title>Blaze Dashboard</title>
+        <link rel="shortcut icon" href="/assets/logo.png">
     </head>
 
     <body>
-        <p>This website is still under development :)</p>
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg bg-transparent navbar-light">
+            <div class="container">
+                <!-- App name-->
+                <a href="#" class="navbar-brand">Blaze</a>
+
+                <!-- Toggle button -->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu options -->
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="/start-scan" class="nav-link">Try it out</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#how-it-works" class="nav-link">How it works</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#contributing-and-deploying" class="nav-link">Contributing & Deploying</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#faq" class="nav-link">FAQ's</a>
+                        </li>
+                    </ul>
+                </div>
+            <div>
+        </nav>
+
+        <!-- Main section -->
+        <div class="container">
+            <div class="row align-items-center h-100">
+                <!-- Main page text -->
+                <div class="col">
+                    <h1>Making the world a better place, <span class="text-warning">one xray at a time</span></h1>
+                    <p>
+                        Blaze leverages the power of Artificial Intelligence to help healthcare workers
+                        diagnose and treat patients faster and more efficieantly. It can be used as a companion
+                        while diagnosing or could be used as a tool to train medical professionals.
+                    </p>
+                    <a href="#how-it-works" class="learn-more">Learn more</a>
+                </div>
+
+                <!-- Main page image -->
+                <div class="col">
+                    <img class="img-fluid landing-image" src="https://wallpaperaccess.com/full/4334504.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="container" id="how-it-works">
+            <div class="row align-items-center h-100">
+                <div class="col">
+                    <img class="img-fluid landing-image" src="https://wallpaperaccess.com/full/4334504.jpg">
+                </div>
+
+                <div class="col">
+                    <h3>How it works</h3>
+                    <hr>
+                    <p>
+                        The xray is analyzed by a pretrained convolutional neural network trained on a combination of these datasets:
+                        <a href="">NIH</a>,
+                        <a href="">RSNA</a>,
+                        <a href="">CheXpert</a>,
+                        <a href="">Mimic-CXR</a> and
+                        <a href="">PadChest</a>.
+                        The AI then outputs its predictions of each disease and can even plot where it thinks it thinks the disease's
+                        epicenter is located. To view the source code or view the code, read <a href="#contributing-and-deploying">this</a>,
+                        or if you wish to test out the AI, you can click <a href="/start-scan">here</a> to visit the start doing a scan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contributing and deploying -->
+        <div class="container" id="contributing-and-deploying">
+            <div class="row align-items-center h-100">
+                <div class="col">
+                    <h3>Contributing & Deploying</h3>
+                    <hr>
+                    <p>
+                        This project is fully open-sourced and licensed under the GPLv3, meaning subsequent forks of this project
+                        will also be open-sourced. Anyone is free to submit, modify or request changes in the code through the
+                        <a href="https://github.com/SystematicError/Chest-Xray-AI">Github Repository</a> where the code is stored. You can deploy this code simply by downloading the code
+                        and running your own instance.
+                    </p>
+                </div>
+
+                <div class="col">
+                    <img class="img-fluid landing-image" src="https://wallpaperaccess.com/full/4334504.jpg">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FAQ's -->
+        <div class="container" id="faq">
+            <div class="row align-items-center h-100">
+                <div class="col">
+                    <!-- Accordion -->
+                    <div class="accordion" id="accordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1">
+                                    Is this app meant to replace human doctors?
+                                </button>
+                            </h2>
+
+                            <div class="accordion-collapse collapse" id="collapse-1" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    Nope, this project does not aim to completely replace doctors. It is just a mere companion
+                                    to assist doctors in diagnosing and treating a patient.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2">
+                                    Can the AI predict better than humans?
+                                </button>
+                            </h2>
+
+                            <div class="accordion-collapse collapse" id="collapse-2" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    The average human radiologist <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5265198">have error rates of upto 5%</a>.
+                                    With sufficient data supplied into the AI's dataset, it can theoretically reach and surpass a human's accuracy. Even if it does
+                                    not reach such high accuracy levels, it can still be used to aid humans.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3">
+                                    Example
+                                </button>
+                            </h2>
+
+                            <div class="accordion-collapse collapse" id="collapse-3" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    Test test test
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
