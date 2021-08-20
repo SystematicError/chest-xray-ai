@@ -55,6 +55,7 @@ img {
 button, label {
     font-family: 'Poppins' sans-serif !important;
     color: #ffffff !important;
-    border-radius: 20px !important;
+    border-radius: 30px !important;
     margin-right: 5px;
+    padding: 8px !important;
 }
