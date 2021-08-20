@@ -1,20 +1,28 @@
+window.image = undefined
+
 document.getElementById("image-upload").onchange = () => {
-    document.getElementById("image-preview").src = URL.createObjectURL(document.getElementById("image-upload").files[0])
+    image = new Image()
+
+    image.onload = () => {
+        document.getElementById("image-preview").src = image.src
+        window.image = image.src
+    }
+
+    image.onerror = () => {
+        document.getElementById("image-preview").src = "/static/invalid-image.png"
+        window.image = undefined
+    }
+
+    image.src = URL.createObjectURL(document.getElementById("image-upload").files[0])
 }
 
 function store_image () {
-    file = document.getElementById("image-upload").files[0]
-
-    if (file == undefined) {
+    if (window.image == undefined) {
         alert("Please add a file before submitting.")
     }
 
     else {
-        file_reader = new FileReader()
-        file_reader.readAsDataURL(file)
-        file_reader.onload = () => {
-            localStorage["xray"] = file_reader.result
-            window.location = "/result"
-        }
+        localStorage["xray"] = window.image
+        window.location = "/result"
     }
 }
