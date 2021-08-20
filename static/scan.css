@@ -50,6 +50,8 @@ hr {
 
 img {
     border-radius: 15px;
+    height: 40vh !important;
+    width: 60vh !important;
 }
 
 button, label {
