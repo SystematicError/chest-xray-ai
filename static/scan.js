@@ -22,7 +22,13 @@ function store_image () {
     }
 
     else {
-        localStorage["xray"] = window.image
-        window.location = "/result"
+        file = document.getElementById("image-upload").files[0]
+
+        file_reader = new FileReader()
+        file_reader.readAsDataURL(file)
+        file_reader.onload = () => {
+            localStorage["xray"] = file_reader.result
+            window.location = "/result"
+        }
     }
 }
