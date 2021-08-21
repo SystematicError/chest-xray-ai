@@ -1,15 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="/static/result.js"></script>
+        <link rel="stylesheet" href="/static/result.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
 
-        <title>Scan result</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <title>Start a scan</title>
+        <link rel="shortcut icon" href="/static/logo.png">
     </head>
 
-    <body onload="fetch_data()">
-        <p id="data">Loading...</p>
+    <body>
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg bg-transparent navbar-light">
+            <div class="container">
+                <!-- App name-->
+                <a href="/" class="navbar-brand">Blaze</a>
+
+                <!-- Toggle button -->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu options -->
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="/#how-it-works" class="nav-link">How it works</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/#contributing-and-deploying" class="nav-link">Contributing & Deploying</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/#faq" class="nav-link">FAQ's</a>
+                        </li>
+                    </ul>
+                </div>
+            <div>
+        </nav>
+
+        <!-- Result -->
+        <div class="container">
+            <div class="row align-items-center h-100">
+                <!-- Image preview -->
+                <div class="col">
+                    <img class="img-fluid" id="image-preview">
+                </div>
+
+                <!-- Result data -->
+                <div class="col">
+                    <p id="data">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="/static/result.js"></script>
     </body>
 </html>
