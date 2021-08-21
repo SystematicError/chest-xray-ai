@@ -9,7 +9,7 @@ document.getElementById("image-upload").onchange = () => {
     }
 
     image.onerror = () => {
-        document.getElementById("image-preview").src = "/static/invalid-image.png"
+        document.getElementById("image-preview").src = "/static/images/invalid-image.png"
         window.image = undefined
     }
 
