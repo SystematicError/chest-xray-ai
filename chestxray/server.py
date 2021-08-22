@@ -45,12 +45,12 @@ def scan_xray() -> str:
     """Scans the provided image and returns the AI's predictions."""
     try:
         image = b64decode(loads(request.data)["image"].split(",", 1)[1])
-        response = str(xray.scan_xray(image))
+        response = xray.scan_xray(image)
     except Exception as error:
         response = {"error": str(error)}
     finally:
         print("[server] Sending results\n")
-        return response
+        return str(response).replace("'", "\"")
 
 
 def start_server(host: str = "0.0.0.0", port: int = 13520) -> None:
