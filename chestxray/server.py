@@ -1,7 +1,6 @@
 from base64 import b64decode
 from json import loads
 from logging import ERROR, getLogger
-# from platform import platform
 from sys import modules
 
 from flask import Flask, render_template, request
@@ -32,12 +31,6 @@ def start_scan() -> str:
 def result() -> str:
     """Shows the results of the scan"""
     return render_template("result.html")
-
-
-# @app.route("/api/server-info")
-# def server_info() -> str:
-#     """Returns host information for the client to verify."""
-#     return platform()
 
 
 @app.route("/api/scan-xray", methods=["POST"])
