@@ -10,7 +10,7 @@ fetch(
 .then(result_data => {
     result = ""
     for (pathology in result_data) {
-        result = result + `<strong>${pathology}</strong> - ${result_data[pathology].toFixed(2)}%<br>`
+        result = result + `<strong>${pathology}</strong> - ${(result_data[pathology]*100).toFixed(2)}%<br>`
     }
     
     document.getElementById("data").innerHTML = result
