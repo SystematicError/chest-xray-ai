@@ -61,3 +61,8 @@ button, label {
     margin-right: 5px;
     padding: 8px !important;
 }
+
+.card {
+    margin-top: 8px;
+    width: 60vh;
+}

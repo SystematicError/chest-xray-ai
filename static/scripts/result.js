@@ -1,4 +1,4 @@
-document.getElementsByClassName("img-fluid")[0].src = localStorage["xray"]
+document.getElementById("image-preview").src = localStorage["xray"]
 
 fetch(
     "/api/scan-xray",
@@ -6,5 +6,12 @@ fetch(
     body: JSON.stringify(
         {"image": localStorage["xray"]}
 )})
-.then(response => response.text())
-.then(text => document.getElementById("data").innerHTML = text)
+.then(response => response.json())
+.then(result_data => {
+    result = ""
+    for (pathology in result_data) {
+        result = result + `<strong>${pathology}</strong> - ${result_data[pathology].toFixed(2)}%<br>`
+    }
+    
+    document.getElementById("data").innerHTML = result
+})  
