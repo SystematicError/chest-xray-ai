@@ -53,6 +53,9 @@ class XrayScanner:
             image = from_numpy(image).unsqueeze(0)
             prediction = self.model(image).cpu()
             prediction = dict(
-                zip(datasets.default_pathologies, prediction[0].detach().numpy())
+                zip(
+                    (pathology.replace("_", " ") for pathology in datasets.default_pathologies),
+                    prediction[0].detach().numpy()
+                   )
             )
             return prediction
