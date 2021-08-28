@@ -1,5 +1,5 @@
 <h2 align="center">
-    <img src="https://github.com/SystematicError/Chest-Xray-AI/raw/master/static/images/logo.png" align="center" width="45">
+    <img src="https://github.com/SystematicError/Chest-Xray-AI/raw/master/static/images/logo.png" align="center" width="50">
     Blaze
 </h2>
 
