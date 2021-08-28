@@ -1,4 +1,7 @@
-<h2 align="center">Blaze</h2>
+<h2 align="center">
+    <img src="https://github.com/SystematicError/Chest-Xray-AI/raw/master/static/images/logo.png" align="center" width="45">
+    Blaze
+</h2>
 
 **Note:** This project is just a proof of concept prototype and should not be used for Medical use.
 
