@@ -7,8 +7,12 @@
 ### What is Blaze?
 Blaze is a webapp designed to predict the probabilities of different pathologies visible under a human chest xray. It aims to co-pilot and assist medical professionals to diagnose patients accurately and efficiently. This project was made as a submission for a competition and is based on the [torchxrayvision](https://pypi.org/project/torchxrayvision/) library.
 
+&nbsp;
+
 ### How can I use it?
 Firstly, you need to make sure you have installed and started up the server. After you start it you get one of two URL's, which will look like the following: `http://0.0.0.0:13520` or something similar to `http://90eu-285-11-20-34.ngrok.io`. After that, you can simply visit the url to use the webapp. Note that the first type of URL is only accessible from the host device.
+
+&nbsp;
 
 ### Downloading
 
@@ -34,6 +38,8 @@ pip install -r requirements.txt
 ```
 
 It may take a minute to install depending on your internet speed.
+
+&nbsp;
 
 ### Starting the server
 When starting the server for the first time, it will download the AI Models and generate some cache. There are 2 ways you can start the server:
@@ -75,6 +81,8 @@ The first URL, `http://0.0.0.0:13520` is your local URL, you can only visit this
 The next URL, `http://90eu-285-11-20-34.ngrok.io` is your public URL, this can be visited from any device as long as the server is running. This URL will change whenever you restart the server.
 
 **Note:** You can press `Ctrl+C` in the terminal to stop the server
+
+&nbsp;
 
 ### Troubleshooting
 If you face an error while launching the server, try re-doing the command, if there is still an issue please create a issue on our [bug tracker](https://github.com/SystematicError/Chest-Xray-AI/issues).
