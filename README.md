@@ -31,13 +31,11 @@ If you do not have git installed or wish to do it in a more graphical way, then 
 
 Now, open your terminal, and navigate to the extracted directory using command prompt or your appropriate terminal ([here](https://www.watchingthenet.com/how-to-navigate-through-folders-when-using-windows-command-prompt.html) you can find a guide for windows or go [here](https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320) for a Linux/MacOS guide)
 
-When you have navigated to the right directory, type the following:
+When you have navigated to the right directory, type the following; it may take a minute to install depending on your internet speed:
 
 ```
 pip install -r requirements.txt
 ```
-
-It may take a minute to install depending on your internet speed.
 
 &nbsp;
 
