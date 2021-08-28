@@ -66,3 +66,13 @@ button, label {
     margin-top: 8px;
     width: 60vh;
 }
+
+@media print{
+    nav, .card-body {
+        display: none !important;
+    }
+
+    .card {
+        opacity: 0;
+    }
+}
