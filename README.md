@@ -96,4 +96,4 @@ The next URL, `http://90eu-285-11-20-34.ngrok.io` is your public URL, this can b
 &nbsp;
 
 ### Troubleshooting
-If you face an error while launching the server, try re-doing the command, if there is still an issue please create a issue on our [bug tracker](https://github.com/SystematicError/Chest-Xray-AI/issues).
+If you face an error while launching the server, try re-doing the command, if there is still an issue please create a issue on our [issue tracker](https://github.com/SystematicError/Chest-Xray-AI/issues).
