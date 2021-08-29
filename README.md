@@ -3,6 +3,12 @@
     Blaze
 </h2>
 
+![License](https://shields.io/github/license/SystematicError/Chest-Xray-AI?style=flat-square&label=License)
+![Issues](https://shields.io/github/issues/SystematicError/Chest-Xray-AI?style=flat-square&label=Issues)
+![Stars](https://shields.io/github/stars/SystematicError/Chest-Xray-AI?style=flat-square&label=Stars)
+![Forks](https://shields.io/github/forks/SystematicError/Chest-Xray-AI?style=flat-square&label=Forks)
+![Last Commit](https://shields.io/github/last-commit/SystematicError/Chest-Xray-AI?style=flat-square&label=Last%20Commit)
+
 **Note:** This project is just a proof of concept prototype and should not be used for Medical use.
 
 ![Image](https://github.com/SystematicError/Chest-Xray-AI/raw/master/static/images/landing-image.png)
