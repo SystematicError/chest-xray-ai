@@ -58,4 +58,5 @@ class XrayScanner:
                     prediction[0].detach().numpy()
                    )
             )
+            prediction = dict(sorted(prediction.items(), key=lambda x:x[1])[::-1])
             return prediction
