@@ -67,6 +67,11 @@ button, label {
     width: 60vh;
 }
 
+.pathology, .pathology:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
 @media print{
     nav, .card-body {
         display: none !important;
