@@ -5,7 +5,7 @@
 
 **Note:** This project is just a proof of concept prototype and should not be used for Medical use.
 
-&nbsp;
+![Image](https://github.com/SystematicError/Chest-Xray-AI/raw/master/static/images/landing-image.png)
 
 ### What is Blaze?
 Blaze is a webapp designed to predict the probabilities of different pathologies visible under a human chest xray. It aims to co-pilot and assist medical professionals to diagnose patients accurately and efficiently. This project was made as a submission for a competition and is based on the [torchxrayvision](https://pypi.org/project/torchxrayvision/) library.
