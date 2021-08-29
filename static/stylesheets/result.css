@@ -12,6 +12,10 @@
     color: #000000 !important;
 }
 
+p {
+    margin-bottom: 5px !important;
+}
+
 .navbar-brand {
     font-weight: 600;
 }

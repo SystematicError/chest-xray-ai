@@ -32,15 +32,19 @@ fetch(
     result = ""
     for (pathology in result_data) {
         if (pathology == "error") {
-            result = "<strong>An unexpected error occured!</strong><br>Please submit a bug report in the "
-            result += `<a href="">issue tracker</a><br><br>Error message:<br><code>${result_data[pathology]}</code>`
+            result = "<h3>An unexpected error occured!</h3><p>Please submit a bug report in the "
+            result += `<a href="">issue tracker</a>, the error message is:</p><code>${result_data["error"]}</code>`
         }
 
         else {
-            result += `<strong><a class="pathology" href="${links[pathology]}">${pathology}</a></strong> - `
-            result += `${(result_data[pathology]*100).toFixed(2)}%<br>`
+            link = links[pathology]
+            probability = (result_data[pathology]*100).toFixed(2)
+
+            result += `<div class="row"><div class="col"><p><strong><a class="pathology" href="${link}">${pathology}</a></strong> `
+            result += `- ${probability}%</div><div class="col"><div class="progress w-30"></p><div class="progress-bar" role="progressbar"`
+            result += ` style="width:${probability}%;"></div></div></div></div>`
         }
     }
-    
+
     document.getElementById("data").innerHTML = result
 })  
