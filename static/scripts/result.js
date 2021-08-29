@@ -34,14 +34,19 @@ fetch(
         if (pathology == "error") {
             result = "<h3>An unexpected error occured!</h3><p>Please submit a bug report in the "
             result += `<a href="">issue tracker</a>, the error message is:</p><code>${result_data["error"]}</code>`
+            break
         }
 
         else {
             link = links[pathology]
             probability = (result_data[pathology]*100).toFixed(2)
 
+            if (probability < 25) {color="bg-success"}
+            else if (probability < 75) {color="bg-warning"}
+            else {color="bg-danger"}
+
             result += `<div class="row"><div class="col"><p><strong><a class="pathology" href="${link}">${pathology}</a></strong> `
-            result += `- ${probability}%</div><div class="col"><div class="progress w-30"></p><div class="progress-bar" role="progressbar"`
+            result += `- ${probability}%</div><div class="col"><div class="progress w-30"></p><div class="${color}" role="progressbar"`
             result += ` style="width:${probability}%;"></div></div></div></div>`
         }
     }
