@@ -31,7 +31,13 @@ fetch(
 .then(result_data => {
     result = ""
     for (pathology in result_data) {
-        result = result + `<strong><a class="pathology" href="${links[pathology]}">${pathology}</a></strong> - ${(result_data[pathology]*100).toFixed(2)}%<br>`
+        if (pathology == "error") {
+            result = `<strong>An unexpected error occured!</strong><br>Please submit a bug report in the <a href="">issue tracker</a><br><br>Error message:<br><code>${result_data[pathology]}</code>`
+        }
+
+        else {
+            result = result + `<strong><a class="pathology" href="${links[pathology]}">${pathology}</a></strong> - ${(result_data[pathology]*100).toFixed(2)}%<br>`
+        }
     }
     
     document.getElementById("data").innerHTML = result
