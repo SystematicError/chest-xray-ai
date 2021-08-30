@@ -83,11 +83,11 @@ If all goes well you should see something like this:
 ```
 [xray] Importing libraries
 [xray] Loading model
-[server] Running locally at http://0.0.0.0:13520
+[server] Running locally at http://0.0.0.0:13520 (http://localhost:13520)
 [tunnel] Created tunnel at http://90eu-285-11-20-34.ngrok.io
 ```
 
-The first URL, `http://0.0.0.0:13520` is your local URL, you can only visit this website from the computer the server is running from. This URL will always be the same.
+The first URL, `http://0.0.0.0:13520` is your local URL, you can only visit this website from the computer the server is running from. This URL will always be the same. If your browser doesn't load the page try loading the URL in the brackets, `http://localhost:13520`.
 
 The next URL, `http://90eu-285-11-20-34.ngrok.io` is your public URL, this can be visited from any device as long as the server is running. This URL will change whenever you restart the server.
 

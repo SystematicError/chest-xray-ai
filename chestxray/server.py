@@ -54,6 +54,7 @@ def start_server(host: str = "0.0.0.0", port: int = 13520) -> None:
         host: Host address.
         port: Port number.
     """
-    print(f"[server] Running locally at http://{host}:{port}")
+    alternate_link = f" (http://localhost:{port})" if host == "0.0.0.0" else ""
+    print(f"[server] Running locally at http://{host}:{port}{alternate_link}")
     start_tunnel(host, port)
     app.run(host, port)
