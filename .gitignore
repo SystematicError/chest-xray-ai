@@ -3,8 +3,3 @@
 
 # Virtual env
 env/
-
-# Images used for testing
-chest.jpg
-chest.png
-chest.jpeg
