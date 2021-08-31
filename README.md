@@ -29,6 +29,8 @@ Firstly, you need to make sure you have installed and started up the server. Aft
 
 ### Downloading
 
+**Note:** As of now the downloading without python is not supported but will be in the very near future
+
 #### Downloading without python
 To get a pre-compiled version, you can visit the [releases](https://github.com/SystematicError/Chest-Xray-AI/releases) section and download the latest version. The rest of the instructions will be given in the following sections. For MacOS, you will need to download as a python project, this is due to Apple only allowing the execution of apps compiled on Apple Hardware.
 
